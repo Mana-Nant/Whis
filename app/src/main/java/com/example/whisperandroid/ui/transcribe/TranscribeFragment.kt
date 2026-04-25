@@ -41,6 +41,7 @@ class TranscribeFragment : Fragment() {
     private var recordStartElapsed: Long = 0L
     private var timerJob: Job? = null
     private var lastShownCompletedId: Long = -1L
+    private var lastShownFailedMessage: String? = null
 
     private val pickAudio =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
@@ -248,6 +249,15 @@ class TranscribeFragment : Fragment() {
                 binding.btnStart.isEnabled = true
                 binding.btnCancel.isEnabled = false
                 binding.progress.isIndeterminate = false
+                // 同じ失敗イベントで何度もSnackbarが出ないように一度だけ表示
+                if (state.message != lastShownFailedMessage) {
+                    lastShownFailedMessage = state.message
+                    Snackbar.make(
+                        binding.root,
+                        getString(R.string.status_failed_fmt, state.message),
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                }
             }
         }
     }
