@@ -123,8 +123,7 @@ dependencies {
 
     // ffmpeg-kit (full-gpl には 16kHz変換に必要な soxr / aac / pcm が揃う)
     // プロダクション配布時はLGPL版に置換を検討
-    implementation("com.arthenica:ffmpeg-kit-full-gpl:6.0-2")
-    implementation("com.arthenica:smart-exception-java:0.2.1")
+    implementation("com.antonkarpenko:ffmpeg-kit-audio:2.1.0")
 
     // Documentfile (SAF)
     implementation("androidx.documentfile:documentfile:1.0.1")
