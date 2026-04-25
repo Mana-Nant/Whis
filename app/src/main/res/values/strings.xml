@@ -56,4 +56,8 @@
     <string name="warn_ram_fmt">%1$s は推奨RAM %2$d GB 以上です。このまま続行しますか？</string>
     <string name="proceed">続行</string>
     <string name="download_started">ダウンロードを開始しました</string>
+    <string name="record_start">🎙 録音して文字起こし</string>
+    <string name="record_stop">■ 録音停止</string>
+    <string name="recording_fmt">🔴 録音中  %1$s</string>
+    <string name="err_mic_permission">マイクの権限が必要です</string>
 </resources>
