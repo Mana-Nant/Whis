@@ -121,10 +121,6 @@ dependencies {
     // OkHttp (Hugging Face から直接 streaming downloadするならこちら。DownloadManager併用)
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
-    // ffmpeg-kit (full-gpl には 16kHz変換に必要な soxr / aac / pcm が揃う)
-    // プロダクション配布時はLGPL版に置換を検討
-    implementation("com.antonkarpenko:ffmpeg-kit-audio:2.1.0")
-
     // Documentfile (SAF)
     implementation("androidx.documentfile:documentfile:1.0.1")
 
