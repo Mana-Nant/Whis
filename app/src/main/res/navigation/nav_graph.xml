@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/transcribeFragment">
+
+    <fragment
+        android:id="@+id/transcribeFragment"
+        android:name="com.example.whisperandroid.ui.transcribe.TranscribeFragment"
+        android:label="@string/tab_transcribe"
+        tools:layout="@layout/fragment_transcribe"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.whisperandroid.ui.history.HistoryFragment"
+        android:label="@string/tab_history"
+        tools:layout="@layout/fragment_history"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.whisperandroid.ui.settings.SettingsFragment"
+        android:label="@string/tab_settings"
+        tools:layout="@layout/fragment_settings"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+</navigation>

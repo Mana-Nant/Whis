@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- データベース・設定は自動バックアップに含める。モデルファイルは除外（巨大・再DL可） -->
+    <exclude domain="file" path="models/" />
+    <exclude domain="cache" path="." />
+</full-backup-content>

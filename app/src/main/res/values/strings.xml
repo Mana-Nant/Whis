@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Whisper Android</string>
+
+    <!-- Tabs -->
+    <string name="tab_transcribe">文字起こし</string>
+    <string name="tab_history">履歴</string>
+    <string name="tab_settings">設定</string>
+
+    <!-- Transcribe -->
+    <string name="current_model">現在のモデル</string>
+    <string name="current_model_fmt">%1$s</string>
+    <string name="no_model_selected">未選択（設定タブでモデルを選んでください）</string>
+    <string name="pick_audio_file">音声ファイルを選択</string>
+    <string name="no_file_selected">ファイルが選択されていません</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+    <string name="status_idle">待機中</string>
+    <string name="status_converting">音声を変換中…</string>
+    <string name="status_transcribing">文字起こし中…</string>
+    <string name="status_done">完了</string>
+    <string name="status_saved_history">履歴に保存しました</string>
+    <string name="status_failed_fmt">失敗: %1$s</string>
+    <string name="err_no_file">音声ファイルを選択してください</string>
+    <string name="err_no_model">モデルをロードしてください（設定タブ）</string>
+    <string name="warn_model_heavy">注意: %1$s は端末RAMに対して重い可能性があります</string>
+
+    <!-- History -->
+    <string name="history_empty">履歴はまだありません</string>
+    <string name="share">共有</string>
+    <string name="export">エクスポート</string>
+    <string name="delete">削除</string>
+    <string name="close">閉じる</string>
+    <string name="cancel">キャンセル</string>
+    <string name="confirm_delete">この履歴を削除しますか？</string>
+    <string name="export_done">エクスポートしました</string>
+    <string name="export_failed">エクスポートに失敗しました</string>
+
+    <!-- Settings -->
+    <string name="section_device">端末情報</string>
+    <string name="device_ram_fmt">RAM: 約 %1$.1f GB</string>
+    <string name="section_output">出力</string>
+    <string name="download_model">モデルをダウンロード</string>
+    <string name="import_model">.bin をインポート</string>
+    <string name="installed_models">インストール済み</string>
+    <string name="no_installed_models">モデル未インストール</string>
+    <string name="size_mb_fmt">%1$d MB</string>
+    <string name="use">使用する</string>
+    <string name="in_use">使用中</string>
+    <string name="confirm_delete_model_fmt">%1$s を削除しますか？</string>
+    <string name="auto_export">文字起こし完了時に自動書き出し</string>
+    <string name="export_dir">既定の書き出し先</string>
+    <string name="choose_dir">フォルダを選択</string>
+    <string name="not_set">未設定</string>
+    <string name="warn">警告</string>
+    <string name="warn_ram_fmt">%1$s は推奨RAM %2$d GB 以上です。このまま続行しますか？</string>
+    <string name="proceed">続行</string>
+    <string name="download_started">ダウンロードを開始しました</string>
+</resources>
