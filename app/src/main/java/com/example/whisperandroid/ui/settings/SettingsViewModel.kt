@@ -54,16 +54,17 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun startDownload(model: WhisperModel) {
-        val id = repo.enqueueDownload(model)
         viewModelScope.launch {
-            repo.pollProgress(id).collect { percent ->
-                _downloading.value = _downloading.value + (model.fileName to percent)
-            }
-        }
-        viewModelScope.launch {
-            repo.observeDownload(id).collect { ok ->
+            try {
+                repo.downloadModel(model).collect { percent ->
+                    _downloading.value = _downloading.value + (model.fileName to percent)
+                }
+                // 完了
                 _downloading.value = _downloading.value - model.fileName
-                if (ok) refreshInstalled()
+                refreshInstalled()
+            } catch (t: Throwable) {
+                android.util.Log.e("SettingsViewModel", "download failed", t)
+                _downloading.value = _downloading.value - model.fileName
             }
         }
     }
