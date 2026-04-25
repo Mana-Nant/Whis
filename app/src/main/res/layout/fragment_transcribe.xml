@@ -93,6 +93,26 @@
                 android:text="@string/stop" />
         </LinearLayout>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_record"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:icon="@drawable/ic_tab_transcribe"
+            android:text="@string/record_start" />
+
+        <TextView
+            android:id="@+id/tv_recording"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="?android:attr/textColorSecondary"
+            android:visibility="gone"
+            tools:text="🔴 録音中  0:12"
+            xmlns:tools="http://schemas.android.com/tools" />
+        
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progress"
             android:layout_width="match_parent"
