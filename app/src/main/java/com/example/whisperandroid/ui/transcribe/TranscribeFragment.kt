@@ -40,6 +40,7 @@ class TranscribeFragment : Fragment() {
     private var recordedFile: File? = null
     private var recordStartElapsed: Long = 0L
     private var timerJob: Job? = null
+    private var lastShownCompletedId: Long = -1L
 
     private val pickAudio =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
@@ -236,7 +237,11 @@ class TranscribeFragment : Fragment() {
                 binding.btnCancel.isEnabled = false
                 binding.progress.isIndeterminate = false
                 binding.progress.progress = 100
-                Snackbar.make(binding.root, R.string.status_saved_history, Snackbar.LENGTH_LONG).show()
+                // 同じ完了イベントで何度もSnackbarが出ないように一度だけ表示
+                if (state.transcriptionId != lastShownCompletedId) {
+                    lastShownCompletedId = state.transcriptionId
+                    Snackbar.make(binding.root, R.string.status_saved_history, Snackbar.LENGTH_LONG).show()
+                }
             }
             is TranscriptionService.ServiceState.Failed -> {
                 binding.tvStatus.text = getString(R.string.status_failed_fmt, state.message)
